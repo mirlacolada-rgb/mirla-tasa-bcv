@@ -1,6 +1,6 @@
 # MODO CREADOR · actualización para Vercel
 
-Incluye cédula numérica, consulta de cupos, regalos GIFT, tickets PDF dorados, Poppins, gradiente pastel, transparencias, sombras y animaciones. Mantiene el registro en la página, tasa BCV, PagoMóvil, Binance, comprobantes en Drive y la hoja original de inscripciones.
+Incluye cédula numérica, consulta de cupos, regalos GIFT, tickets PDF dorados, Poppins, gradiente pastel, transparencias, sombras y animaciones. La versión nueva añade un recorrido editorial inspirado en la referencia, carrusel horizontal con arrastre y flechas, movimiento automático suave que se pausa al interactuar, fondo desenfocado en ventanas y animación de apertura tipo app. Mantiene el registro en la página, tasa BCV, PagoMóvil, Binance, comprobantes en Drive y la hoja original de inscripciones.
 
 ## Actualizar la página que ya tienes
 
@@ -11,6 +11,12 @@ Incluye cédula numérica, consulta de cupos, regalos GIFT, tickets PDF dorados,
 5. Revisa el dominio de producción: el encabezado debe mostrar **Consulta tu cupo** y el registro **Quiero regalar mi cupo**.
 
 La conexión de Apps Script y la hoja ya fueron actualizadas desde la cuenta Mirla Colada durante esta entrega. Se mantuvo la misma URL `/exec`, sin recrear la hoja, la carpeta de comprobantes ni los secretos. El archivo `integrations/google-apps-script.gs` contiene la versión entregada por si necesitas recuperarla.
+
+## Movimiento, cursor y modo noche
+
+El botón Noche/Día del encabezado cambia el tema y conserva la preferencia en el navegador. Los botones principales de reserva tienen apariencia de switch: al hacer clic o tocar, animan su recorrido y abren el formulario existente de registro y pago. No realizan un pago ni omiten el registro.
+
+En equipos con ratón y pantallas amplias, las imágenes, títulos y capas decorativas usan parallax y zoom vinculados al scroll; la animación se sincroniza con el refresco de pantalla mediante requestAnimationFrame. Se mantiene el scroll nativo, se detiene el movimiento automático del carrusel cuando hay una ventana abierta y se respeta la preferencia de movimiento reducido. El cursor es púrpura en equipos con ratón y tiene un aro suave; el aro se omite en pantallas táctiles. Todas las ventanas usan una capa de fondo desenfocada.
 
 ## Uso de la consulta y los tickets
 
@@ -39,3 +45,11 @@ Solo si necesitas reinstalar el backend: abre tu proyecto Apps Script existente,
 Node.js 22 o superior. `npm install`; copia `.env.example` a `.env.local` y completa tu secreto privado; `npm run dev`. Para comprobar: `npm run build`. No publiques `.env.local` ni el secreto en GitHub o HTML. Poppins se sirve localmente y también se incorpora al PDF; su licencia está en `public/fonts/OFL.txt`.
 
 Esta entrega contiene el código listo; la publicación de los archivos visuales en tu cuenta Vercel aún requiere actualizar el repositorio conectado.
+
+## Optimización para Android, iOS y tabletas
+
+El diseño se adapta desde 320 px, con navegación reorganizada en teléfonos pequeños, controles táctiles de al menos 44 px y carrusel con deslizamiento nativo. Las ventanas ajustan su altura y posición al área visible del navegador cuando aparece el teclado o cambia la orientación. Los campos de texto usan 16 px para evitar el zoom automático de Safari al escribir; el usuario conserva el zoom manual. Se contemplan las zonas seguras del notch y la barra inferior.
+
+En pantallas táctiles se omiten el parallax, el zoom de la fotografía y las animaciones continuas del fondo para reducir trabajo gráfico. Se mantienen las transiciones, el switch de reserva, el carrusel, el fondo desenfocado y el modo noche. El HTML incorpora fuentes e imagen y evita incluir hojas de estilo de compilaciones anteriores.
+
+Actualiza el mismo repositorio conectado a Vercel siguiendo los pasos de arriba. No cambies las variables ni vuelvas a publicar Apps Script para esta mejora. El HTML descargable sirve para revisar el diseño; registro, consulta y PDF requieren la página publicada con su servidor.

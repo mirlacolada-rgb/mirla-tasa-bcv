@@ -10,3 +10,19 @@
 - Publicación Apps Script versión 3 confirmada en la misma URL. Prueba de conexión real: `/api/event` HTTP 200 con `connected: true`; `/api/lookup` HTTP 200, sin escribir registros.
 - No se enviaron registros, pagos ni comprobantes ficticios a la hoja real.
 - La publicación final en Vercel y una inscripción real con aprobación deben comprobarse después de reemplazar los archivos del repositorio. No se verificó el dominio Vercel porque no se proporcionó su dirección ni el repositorio.
+
+## Diseño con carrusel
+
+Compilación de producción y TypeScript correctas después de incorporar el carrusel. Los módulos conservan su contenido y ventanas. El carrusel tiene flechas, indicadores, arrastre de ratón, desplazamiento táctil y teclado; su movimiento automático se pausa al interactuar y respeta la preferencia de movimiento reducido. Se añadió desenfoque en la capa de fondo de todos los diálogos y animación de apertura/cierre. No se modificó el backend en esta actualización. La interacción visual en un navegador real queda pendiente de comprobar en la publicación.
+
+## Movimiento y modo noche
+
+Compilación de producción y TypeScript correctas. Pruebas de interacción en DOM simulado con el HTML exportado: carga del tema guardado, alternancia y persistencia día/noche, animación del switch antes de abrir el formulario, campos de registro y regalo conservados, reset del switch al cerrar y apertura de módulos con la misma capa de fondo. Sin errores JavaScript durante esas pruebas.
+
+Las animaciones usan tiempos dependientes del refresco y transformaciones; no se midieron los FPS reales ni se hizo una revisión visual del HTML en un navegador real. La fluidez depende del dispositivo. La inspección del HTML local quedó bloqueada por la política de protocolos del navegador de revisión. El backend y las condiciones de pago permanecen como en la versión anterior.
+
+## Optimización móvil
+
+TypeScript y compilación de producción correctos. Pruebas en DOM simulado para anchos de 320, 375, 390, 430 y 768 px: modo táctil sin parallax, viewport con zonas seguras, apertura y cierre de registro, cédula numérica, campos de regalo y consulta de cupos. Se simula la aparición del teclado y se comprueban las variables de altura y centro utilizadas por las ventanas. Se repiten las pruebas anteriores del modo noche, switch y módulos sobre el HTML exportado.
+
+Estas pruebas verifican lógica e interacción, no el cálculo visual del layout de Safari/Chrome ni los FPS en hardware real. Queda pendiente una revisión visual en Android/iOS, con teclado, giro de pantalla y una inscripción real, una vez desplegado el proyecto en Vercel. El backend no se modificó.
