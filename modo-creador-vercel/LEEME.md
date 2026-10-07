@@ -4,8 +4,8 @@ Incluye cédula numérica, consulta de cupos, regalos GIFT, tickets PDF dorados,
 
 ## Actualizar la página que ya tienes
 
-1. Descomprime `MODO_CREADOR_RESPONSIVE_VERCEL.zip`.
-2. En el mismo repositorio GitHub conectado a Vercel, reemplaza los archivos con **el contenido** de `modo-creador-responsive`. Incluye `app`, `lib`, `components`, `public`, `package.json` y los archivos de configuración de la raíz. No subas solo el ZIP ni crees una subcarpeta adicional.
+1. Descomprime `MODO_CREADOR_Vercel.zip`.
+2. En el mismo repositorio GitHub conectado a Vercel, reemplaza los archivos con **el contenido** de `modo-creador-vercel`. Incluye `app`, `lib`, `components`, `public`, `package.json` y los archivos de configuración de la raíz. No subas solo el ZIP ni crees una subcarpeta adicional.
 3. Confirma los cambios en la rama que despliega Vercel. Vercel compilará la actualización automáticamente. Si no, entra en Deployments y realiza un Redeploy de esa rama.
 4. Mantén tus variables `GOOGLE_SCRIPT_URL` y `GOOGLE_SHARED_SECRET`. No necesitas nuevas variables.
 5. Revisa el dominio de producción: el encabezado debe mostrar **Consulta tu cupo** y el registro **Quiero regalar mi cupo**.
@@ -63,11 +63,3 @@ Se reemplazaron las reglas móviles que se sobrescribían por un conjunto único
 Se añadió un botón pequeño de vidrio transparente en el borde derecho, en móvil y escritorio, que abre https://wa.me/584243315783 sin enviar un mensaje automáticamente. Se oculta con la X o arrastrándolo hacia el borde; queda una pestaña discreta para recuperarlo. La preferencia de ocultarlo se conserva en ese navegador. Se muestra por debajo de las ventanas para no tapar el registro o los datos de pago.
 
 La página limita el desbordamiento horizontal de las capas decorativas. El desplazamiento horizontal se conserva solo dentro del carrusel. El viewport fija la escala a 1 y no permite zoom; se cancelan los gestos de pellizco y los gestos de Safari sin cancelar el desplazamiento normal con un dedo. Algunos navegadores o ajustes de accesibilidad pueden imponer sus propias opciones de zoom. Esta actualización no modifica Apps Script ni requiere variables nuevas.
-
-## MODO CREADOR RESPONSIVE · botones cápsula
-
-La interfaz usa botones planos y cápsulas de alto contraste en púrpura y rosa, según las referencias de imagen y video. La reserva tiene una pieza interior rosa que se desliza al pulsar; el selector día/noche tiene sol y luna con un círculo móvil. Se retiró el acabado de vidrio reflectante de los botones de la interfaz. El botón flotante de WhatsApp conserva su halo púrpura/rosa, su posición elevada y la ocultación con recuperación desde el borde.
-
-Tipografía Poppins: controles principales a 14–15 px, campos a 16 px, etiquetas de formulario a 14 px y texto principal a 15–16 px según el ancho. El encabezado pasa a dos filas de marca/tema y acciones en 760 px o menos para mantener etiquetas legibles. La reserva del encabezado dice «Reservar» y usa «Abriendo…» durante la animación; «Consulta tu cupo» puede ocupar dos líneas en teléfonos estrechos. Se mantienen las áreas táctiles y la preferencia de movimiento reducido.
-
-Entrega: MODO_CREADOR_RESPONSIVE.html y MODO_CREADOR_RESPONSIVE_VERCEL.zip. El HTML permite revisar el diseño; registro, consulta y PDF requieren el servidor publicado en Vercel.

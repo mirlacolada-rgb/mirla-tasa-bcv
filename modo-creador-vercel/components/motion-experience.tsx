@@ -6,7 +6,7 @@ export function ThemeToggle(){
  const [night,setNight]=useState(false);
  useEffect(()=>{try{const dark=localStorage.getItem('mirla-theme')==='dark';setNight(dark);document.documentElement.dataset.theme=dark?'dark':'light'}catch{}},[]);
  function toggle(){const next=!night;setNight(next);document.documentElement.dataset.theme=next?'dark':'light';try{localStorage.setItem('mirla-theme',next?'dark':'light')}catch{}}
- return <button className="theme-toggle" type="button" onClick={toggle} aria-pressed={night} aria-label={night?'Desactivar modo noche':'Activar modo noche'} title={night?'Modo día':'Modo noche'} data-night={night}><span className="theme-track" aria-hidden="true"><span className="theme-knob"/><Sun className="theme-sun" size={17}/><Moon className="theme-moon" size={17}/></span></button>;
+ return <button className="theme-toggle" type="button" onClick={toggle} aria-pressed={night} aria-label={night?'Desactivar modo noche':'Activar modo noche'} title={night?'Modo día':'Modo noche'}>{night?<Sun size={18}/>:<Moon size={18}/>}<span>{night?'Día':'Noche'}</span></button>;
 }
 
 export function ReserveSwitch({onActivate,open,disabled=false,className='',label='Reservar mi cupo'}:{onActivate:()=>void;open:boolean;disabled?:boolean;className?:string;label?:string}){
@@ -14,7 +14,7 @@ export function ReserveSwitch({onActivate,open,disabled=false,className='',label
  useEffect(()=>{if(!open)setEngaged(false)},[open]);
  useEffect(()=>()=>{if(timer.current)clearTimeout(timer.current)},[]);
  function activate(){if(disabled||engaged)return;const el=button.current;if(el)el.style.setProperty('--switch-travel',Math.max(0,el.clientWidth-56)+'px');setEngaged(true);if(matchMedia('(prefers-reduced-motion: reduce)').matches){onActivate();return;}timer.current=setTimeout(()=>{onActivate();timer.current=null},360)}
- return <button ref={button} type="button" className={'reserve-switch '+className} disabled={disabled} data-engaged={engaged} aria-haspopup="dialog" aria-expanded={open} onClick={activate}><span className="switch-thumb" aria-hidden="true">{engaged?<Check size={19}/>:<Ticket size={19}/>}</span><span className="switch-copy">{disabled?label:engaged?(className.includes('nav-switch')?'Abriendo…':'Abriendo tu reserva…'):label}</span><span className="switch-spark" aria-hidden="true"/></button>;
+ return <button ref={button} type="button" className={'reserve-switch '+className} disabled={disabled} data-engaged={engaged} aria-haspopup="dialog" aria-expanded={open} onClick={activate}><span className="switch-thumb" aria-hidden="true">{engaged?<Check size={19}/>:<Ticket size={19}/>}</span><span className="switch-copy">{disabled?label:engaged?'Abriendo tu reserva…':label}</span><span className="switch-spark" aria-hidden="true"/></button>;
 }
 
 export function MotionExperience(){
