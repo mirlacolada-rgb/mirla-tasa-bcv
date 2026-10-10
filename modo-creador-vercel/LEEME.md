@@ -1,3 +1,6 @@
+## IMPORTANTE: última entrega
+Lee ACTUALIZAR_VERCEL.md: esta entrega cambia contenido y CSS, por lo que hay que actualizar el proyecto completo.
+
 # MODO CREADOR · diseño actualizado desde el PDF de Mirla
 
 Fotos, título e íconos extraídos de las capas del PDF con su transparencia original. Poppins en pesos 400, 500, 600, 700 y 800. Modo noche por defecto; se conserva la elección de modo día. Teléfono del cierre estático, letras animadas, botones switch, cronograma clicable y formularios existentes. WhatsApp corporativo: 0424 414 4992.
@@ -10,7 +13,7 @@ Fotos, título e íconos extraídos de las capas del PDF con su transparencia or
 4. Mantén tus variables `GOOGLE_SCRIPT_URL` y `GOOGLE_SHARED_SECRET`. No necesitas nuevas variables.
 5. Revisa el dominio de producción: el encabezado debe mostrar **Consulta tu cupo** y el registro **Quiero regalar mi cupo**.
 
-Esta entrega actualiza la interfaz. Mantén la conexión y las variables existentes de Vercel; no requiere cambiar Apps Script ni crear una hoja nueva.
+Para esta corrección visual, conserva las variables de Vercel y el Apps Script actualizado de los tickets. Si vienes de una versión anterior de los tickets, sigue las instrucciones de actualización al final.
 
 ## Movimiento, cursor y modo noche
 
@@ -32,7 +35,7 @@ En equipos con ratón y pantallas amplias, los títulos y capas decorativas mant
 
 ## Condiciones conservadas
 
-Entrada USD 100 por PagoMóvil a tasa BCV. Binance de contado: 89.99 USDT, descuento únicamente por pago completo. Reserva de 50 y saldo de 50 en puerta, sin descuento. Comprobantes JPG, PNG o PDF de hasta 4 MB. Validación de pagos hasta 24 horas y sin devoluciones.
+Entrada USD 99.99 por PagoMóvil a tasa BCV. Binance de contado: 89.99 USDT, descuento únicamente por pago completo. Reserva de 50 y saldo de 49.99 en puerta, sin descuento. Comprobantes JPG, PNG o PDF de hasta 4 MB. Validación de pagos hasta 24 horas y sin devoluciones.
 
 Masterclass: 14 noviembre 2026, Supercines CC La Granja, Naguanagua; de 9:00 a. m. a 12:30 p. m., coffee break hasta 1:00 p. m. Incluye acceso, dinámicas, certificado y coffee break. Cierre de inscripciones: 13 noviembre 2026 a las 19:00, hora de Caracas; 200 cupos aprobados.
 
@@ -78,3 +81,12 @@ IMPORTANTE: reemplaza también el código de Apps Script por integrations/google
 El código de tres dígitos se asigna al descargar por primera vez un ticket aprobado y se guarda permanentemente en Sheets. No se recicla; admite 001–999. El ID MC original y la verificación firmada siguen vigentes; el código corto no permite consultar datos por sí solo.
 El ticket muestra titular y su cédula; para regalos sin cédula del beneficiario, indica “Por confirmar con Mirla”. Incluye GIFT y comprador si corresponde. Al aprobar el saldo final en Sheets, actualiza Abono, Saldo=0 y Estado=confirmado. Al volver a descargar se conserva el código y aparece Pago completo.
 Binance muestra solo USDT; las conversiones BCV aparecen únicamente para PagoMóvil.
+
+
+## Corrección móvil
+Actualiza los archivos del repositorio conectado a Vercel. Esta corrección visual no requiere cambiar Sheets, secretos ni Apps Script si ya actualizaste los tickets. Se integra el borde inferior de la mano con transparencia CSS, se estabilizan las dimensiones de imágenes y se precargan fuentes. En móvil se simplifican los efectos pesados de la portada y se conservan las apariciones al desplazarse y los botones funcionales.
+
+
+## Adaptación al PDF móvil (última actualización)
+Todos los cambios de esta entrega están en app/globals.css, dentro de @media(max-width:760px). Para actualizar únicamente el diseño móvil, reemplaza app/globals.css con el globals.css entregado y confirma el cambio en GitHub. El título y los controles de cámara móviles están incorporados en el CSS; no necesitas subir imágenes adicionales. También puedes actualizar con el ZIP completo. No cambies Apps Script ni las variables.
+Se elimina la representación emoji del adorno ✳ en móvil sustituyéndola por una figura CSS monocromática. La versión de escritorio conserva sus medidas y composición.
