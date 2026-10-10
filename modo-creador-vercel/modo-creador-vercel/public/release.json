@@ -1,0 +1,9 @@
+{
+  "version": "mirla-2026-10-10-social-parity",
+  "mobileReference": "Responsive Landing Mirla",
+  "includes": [
+    "colaboracion-con-marcas",
+    "instagram",
+    "tiktok"
+  ]
+}

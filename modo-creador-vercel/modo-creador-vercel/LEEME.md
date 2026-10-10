@@ -1,3 +1,6 @@
+## IMPORTANTE: última entrega
+Lee ACTUALIZAR_VERCEL.md: esta entrega cambia contenido y CSS, por lo que hay que actualizar el proyecto completo.
+
 # MODO CREADOR · diseño actualizado desde el PDF de Mirla
 
 Fotos, título e íconos extraídos de las capas del PDF con su transparencia original. Poppins en pesos 400, 500, 600, 700 y 800. Modo noche por defecto; se conserva la elección de modo día. Teléfono del cierre estático, letras animadas, botones switch, cronograma clicable y formularios existentes. WhatsApp corporativo: 0424 414 4992.
