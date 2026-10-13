@@ -1,11 +1,19 @@
-# Publicar la misma versión del HTML aprobado
+# Actualizar MODO CREADOR en Vercel
 
-La página pública examinada el 10 de octubre seguía sirviendo un CSS anterior sin los ajustes del PDF móvil. El proyecto de este ZIP fue compilado y comparado con el HTML: coinciden las dimensiones y posiciones de los elementos a 390 y 1440 px.
+1. Descomprime este ZIP.
+2. En el mismo repositorio de GitHub conectado a Vercel, reemplaza los archivos con los de esta carpeta. El archivo package.json debe quedar en la raíz del proyecto configurada en Vercel.
+3. Incluye app, components, lib, public e integrations y los archivos de configuración. No basta con reemplazar el CSS: las guías incluyen 22 imágenes en public/guides.
+4. Guarda los cambios (commit) y espera a que Vercel marque el despliegue como Ready.
+5. Conserva tus variables GOOGLE_SCRIPT_URL y GOOGLE_SHARED_SECRET en Vercel. No hay variables nuevas ni cambios necesarios de Apps Script para las guías.
+6. Abre tu dominio y verifica la sección Guías.
 
-1. Descomprime este ZIP. Abre modo-creador-vercel.
-2. Reemplaza el contenido del repositorio conectado a Vercel con el contenido de esa carpeta. En esta actualización debes subir tanto app/page.tsx como app/globals.css y public/release.json, además del resto del proyecto. Cambiar solo el CSS no añade el check ni los enlaces.
-3. Guarda los cambios en la rama de producción y espera el nuevo despliegue. En Vercel confirma que el despliegue está asociado al nuevo commit y figura como Production/Ready. Volver a desplegar un commit viejo no incorpora archivos nuevos.
-4. Conserva GOOGLE_SCRIPT_URL y GOOGLE_SHARED_SECRET. No necesitas modificar Apps Script para esta entrega.
-5. Abre tu dominio seguido de /release.json. Debe mostrar la versión mirla-2026-10-10-social-parity. Si no aparece, ese dominio aún apunta a otra versión. Revisa el proyecto y despliegue de producción antes de volver a subir archivos.
+## Enlaces para compartir después de publicar
 
-El HTML es una vista previa autónoma. Los registros, consulta y tickets funcionan en la versión publicada. Comparación visual realizada con el mismo tema, ancho y datos simulados, sin enviar registros reales. No se probó Safari físico.
+Añade estas terminaciones a tu dominio:
+- /#guias/camara
+- /#guias/hooks
+- /#guias/marcas
+
+Cada enlace abre únicamente esa guía. Todas las guías permite regresar al catálogo. Las guías son públicas: quien navegue voluntariamente al catálogo podrá ver las tres.
+
+Se mantienen el registro, consulta de cupos, tickets y pagos del proyecto previo. Comprueba estas funciones tras desplegar con tus variables habituales.
